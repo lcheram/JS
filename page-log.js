@@ -23,6 +23,7 @@ $connect.addEventListener("click", (e) => {
 
 $connect.addEventListener("click", (e) => {
   e.preventDefault();
+  $form.reset(); // vide les inputs
   if ($connect.innerText != "Se déconnecter") {
     //si le texte contenu dans connect n'est pas "se déconnecter", il ne se passe rien
   } else {
@@ -40,6 +41,7 @@ $connect.addEventListener("click", (e) => {
 
 $envoyer.addEventListener("click", (e) => {
   e.preventDefault();
+  $form.reset(); // vide les inputs
   // le login et password vérification structure valeurs strictements égales (les deux !)
   if (mylogin === $log.value && mypassword === $password.value) {
     $form.classList.add("hidden"); // le form se cache
@@ -65,6 +67,7 @@ $annuler.addEventListener("click", (e) => {
   e.preventDefault();
   // le login et password vérification structure
   $form.classList.add("hidden");
+  $form.reset();
   //$notif.classList.remove("hidden");
   //$notif.innerHTML = `Vous n'êtes pas connecté.e`;
   //$notif.classList.add("is-danger");
