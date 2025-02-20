@@ -16,6 +16,9 @@ $form.addEventListener("submit", (e) => {
     $secure.classList.remove("hidden");
   } else {
     $notif.classList.remove("hidden");
+    setTimeout(() => {
+      $notif.classList.add("hidden");
+    }, 2000);
   }
 });
 
@@ -26,3 +29,5 @@ $form.addEventListener("submit", (e) => {
 
 //je mets un event listener sur mon click de bouton
 // ensuite je fais un if et else
+
+//    $notif.classList.add("hidden").delay(3000);
