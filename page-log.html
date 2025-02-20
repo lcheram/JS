@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"
+    />
+    <style>
+      .login-form {
+        position: absolute;
+        width: 20%;
+        right: 0;
+        top: 1rem;
+        background-color: #fff;
+        padding: 1rem;
+        border: 1px solid black;
+        transition: all 1s;
+      }
+      .login-form.hidden {
+        right: -1000px;
+      }
+      .notification {
+        z-index: 7;
+        position: absolute;
+        transition: all 1s;
+        width: 80%;
+        top: 1rem;
+      }
+      .hidden {
+        opacity: 0;
+        top: -500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="notification hidden">Vous êtes déconnecté</div>
+
+      <header class="hero is-primary">
+        <div class="hero-body">
+          <div class="columns">
+            <div class="column is-four-fifths">
+              <h1 class="title">Hello</h1>
+            </div>
+
+            <div class="column">
+              <a class="btn-connect" href="">Se connecter</a>
+            </div>
+          </div>
+
+          <form action="" class="form login-form hidden">
+            <div class="field">
+              <label for="login" class="label">Login :</label>
+              <div class="control">
+                <input type="text" class="input" id="login" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="password" class="label">Password :</label>
+              <div class="control">
+                <input type="password" class="input" id="password" />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button class="button envoi">Envoyer</button>
+                <button class="button annul">Annuler</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </header>
+    </div>
+    <script src="page-log.js"></script>
+  </body>
+</html>
