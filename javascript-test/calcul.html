@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="first"></p>
+
+    <script>
+
+        let message = parseInt(prompt('Donne un numero bb'))
+        let message2 = parseInt(prompt('Donne en un encore petit coeur'))
+
+        //console.log(`${message + message2}`)
+        //console.log(`${message} + ${message2} = ${message + message2}`)
+        //const $para = document.querySelector('#first')
+        const $para = document.getElementById('first')
+
+        $para.innerText = `${message} + ${message2} = ${message + message2}`
+
+    </script>
+    
+</body>
+</html>

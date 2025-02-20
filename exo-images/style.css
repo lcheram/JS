@@ -1,0 +1,25 @@
+.container {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    display: flex;
+    gap: 2rem;
+
+}
+
+img {
+    width: 100%;
+}
+
+aside {
+    max-width: 15%;
+  
+    
+}
+
+main {
+    width: 60%;
+}
+
+ul {
+    list-style: none;
+}

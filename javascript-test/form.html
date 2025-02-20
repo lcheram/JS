@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form de calcul</title>
+</head>
+
+<body>
+    <form class="calcul" action="">
+        <label for="nb1">Nb1</label>
+        <input id="nb1" type="text" value="0">
+        <label for="nb2">Nb2</label>
+        <input id="nb2" type="text">
+        <button>Calculer</button>
+    </form>
+    <div class="sortie"></div>
+
+    <script>
+        //je sélectionne le formulaire
+        const $form = document.querySelector('.calcul')
+
+        //je sélectionne les valeurs des inputs
+        const $nb1 = document.querySelector('#nb1')
+        const $nb2 = document.querySelector('#nb2')
+
+        //je sélectionne ma div, comme ça plus tard je pourrai écrire dedans
+        const $sortie = document.querySelector('.sortie')
+
+        //je vais chercher et afficher dans ma console la value de mon nb1 (value devient une propriété, car c'est un attribut de mon input, et je peux les cibler)
+        //console.log($nb1.value)
+
+        //on veut écouter un évent sur le formulaire : on veut écouter la soumission : submit (ça pourrait être un mousehover, un click, etc.). Quand submit, on déclenche un event
+        // => avec cet événement, on va déclencher un truc, ici, une fonction (donc entre accolades)
+        $form.addEventListener('submit', event => {
+            event.preventDefault() //fonction qui neutralise le comportement par défaut de la soummission du form : ne va plus raffraichir la page. ça nous permetv de prendre la main
+            //e = event, les gens écrivent même pas event de nos jours didju
+            const nb1Val = parseFloat($nb1.value) //je récupère la valeur du champ que j'ai sélectionné juste avant et avec parseFloat je converti en nombre : faut les parser 
+            const nb2Val = parseFloat($nb2.value) 
+
+
+            //console.log(nb1Val)
+            // test : avec la fonction isNaN : si ma valeur n'est pas un nombre -> {alors, alert}
+            if(isNaN(nb1Val) || isNaN(nb2Val)){ // || = OU en JS
+                alert('veuillez taper des nombres')
+            }
+            else { // si c'est un nombre on affiche le total dans la sortie
+                $sortie.innerText = `Le total est : ${nb1Val + nb2Val}`
+            }
+
+        }) // fermeture addEventListener
+        // si NaN en sortie : not a number, sauf si je change type:number dans mes input, comme ça on est sûr de n'avoir que des nombresd. Par contre ce n'est pas sécurisé
+
+    </script>
+</body>
+</html>

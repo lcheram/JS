@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc JS</title>
+  </head>
+  <body>
+    <h1>Titre de la page</h1>
+    <p id="first">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod modi minus
+      quia debitis quaerat nihil quisquam delectus, quos ratione harum? Culpa
+      nam sed suscipit consequuntur dolore quod id aspernatur beatae!
+    </p>
+    <script defer>
+      let nom = "Charlier";
+      let prenom = "Pierre";
+      let age = 56;
+      let inscription = true;
+      let hobbies = ["Tennis", "Parapenthe", "Moto"];
+      const EMPLOYEUR = "Cepegra";
+      prenom = "Benoît";
+      let conjoint = {
+        prenom: "Claire",
+        nom: "Durant",
+        age: 56,
+        inscription: false,
+      };
+      const $paragraphe = document.querySelector("#first");
+      //console.log($paragraphe);
+      $paragraphe.innerText = "Nouveau Texte";
+      $paragraphe.innerHTML = "<strong> Nouveau Texte</strong>";
+
+      $paragraphe.innerHTML = `Mon prenom : ${conjoint.prenom} et mon nom : ${conjoint.nom} et <b>je sais que 2+2 font ${2+2}</b>`
+      //console.log(document);
+      //console.log(conjoint.prenom + ' ' + conjoint.nom)
+      //console.log(`je m'appelle : ${conjoint.nom} ${conjoint.prenom} et je sais que 2 + 2 font ${2 + 2}`)
+    </script>
+    <!-- paramètre "defer" permet de faire charger le JS après le chargement du html normalement, sauf alert() qui est d'office bloquante. mettre juste avant la fin du body, mais de préférence autre fichier et charger dans head avec link // styles-->
+    <!--déclarer une variable : let nomdevar = 'valeur' -->
+    <!-- plus besoin de ; à la fin de chaque instruction JS depuis version 6 -->
+    <!--string, number, bolean, array-->
+    <!--array : entre crochets et séparé par des virgules-->
+  </body>
+</html>

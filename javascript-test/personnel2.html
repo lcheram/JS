@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perso perso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <main>
+            <h1>Fiche individuelle</h1>
+            <div class="fiche"></div>
+        </main>
+
+        <aside>
+            <h2>Listing</h2>
+            <ul class="listing hidden">
+            </ul>
+
+            <form id="new-person" action="">
+
+                <h3>Rajouter une personne</h3>
+
+                <input type="text" id="fname" placeholder="Prénom">
+                <input type="text" id="sname" placeholder="Nom">
+                <input type="text" id="centre" placeholder="Centre">
+                <input type="text" id="fonction" placeholder="Fonction">
+                <input type="text" id="eval" placeholder="Evaluation">
+
+                <label for="inscription">
+                <input type="checkbox" id="inscription">Inscrit.e</label>
+
+
+                <label for="date">Date de naissance</label>
+                <input type="date" id="date">
+                <button>Ajouter</button>
+
+            </form>
+        </aside>
+    </div>
+
+    <script src="personnel2.js" defer></script>
+</body>
+</html>
