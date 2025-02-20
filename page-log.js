@@ -20,6 +20,21 @@ $connect.addEventListener("click", (e) => {
 });
 
 //si login et password quand form submit
+
+$connect.addEventListener("click", (e) => {
+  e.preventDefault();
+  if ($connect.innerText != "Se déconnecter") {
+  } else {
+    $connect.innerText = `Se connecter`;
+    $notif.innerText = `Vous êtes déconnecté`;
+    $notif.classList.remove("hidden");
+    $form.classList.add("hidden");
+    setTimeout(() => {
+      $notif.classList.add("hidden");
+    }, 2000);
+  }
+});
+
 $envoyer.addEventListener("click", (e) => {
   e.preventDefault();
   // le login et password vérification structure
@@ -30,11 +45,6 @@ $envoyer.addEventListener("click", (e) => {
     $notif.innerHTML = `Vous êtes connecté.e`;
     $connect.innerHTML = "Se déconnecter";
     $h1.innerHTML = `Hello ${$log.value}`; // rajoute le nom dans le h1
-    $connect.addEventListener("click", (e) => {
-      $connect.innerHTML = "Se Connecter"; // ne fonctionne pas si je veux de nouveau me connecter, faudrait utiliser une var boleenne ou bien un switch, ou tester if mon lien != "se déconnecter" {} sachant que != veut dire n'est pas égal, ne contient pas
-      $form.classList.add("hidden");
-      $h1.innerHTML = `Hello `; // retire le nom dans le h1
-    });
     setTimeout(() => {
       $notif.classList.add("hidden");
     }, 2000);
@@ -56,3 +66,32 @@ $annuler.addEventListener("click", (e) => {
   //$notif.innerHTML = `Vous n'êtes pas connecté.e`;
   //$notif.classList.add("is-danger");
 });
+
+/*$envoyer.addEventListener("click", (e) => {
+ e.preventDefault();
+ // le login et password vérification structure
+ if (mylogin === $log.value && mypassword === $password.value) {
+   $form.classList.add("hidden");
+   $notif.classList.remove("hidden");
+   $notif.classList.remove("is-danger"); // au cas où il y a eu ajout classe danger si erreurs avant
+   $notif.innerHTML = `Vous êtes connecté.e`;
+   $connect.innerHTML = "Se déconnecter";
+   $h1.innerHTML = `Hello ${$log.value}`; // rajoute le nom dans le h1
+   $connect.addEventListener("click", (e) => {
+     $connect.innerHTML = "Se Connecter"; // ne fonctionne pas si je veux de nouveau me connecter, faudrait utiliser une var boleenne ou bien un switch, ou tester if mon lien != "se déconnecter" {} sachant que != veut dire n'est pas égal, ne contient pas
+     $form.classList.add("hidden");
+     $h1.innerHTML = `Hello `; // retire le nom dans le h1
+   });
+   setTimeout(() => {
+     $notif.classList.add("hidden");
+   }, 2000);
+ } else {
+   $notif.classList.remove("hidden");
+   $notif.innerHTML = `Vous n'êtes pas connecté.e, erreur dans le champ login ou mot de passe`;
+   $notif.classList.add("is-danger");
+   setTimeout(() => {
+     $notif.classList.add("hidden");
+   }, 4000);
+ }
+});
+*/
