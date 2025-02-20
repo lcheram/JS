@@ -24,11 +24,14 @@ $connect.addEventListener("click", (e) => {
 $connect.addEventListener("click", (e) => {
   e.preventDefault();
   if ($connect.innerText != "Se déconnecter") {
+    //si le texte contenu dans connect n'est pas "se déconnecter", il ne se passe rien
   } else {
-    $connect.innerText = `Se connecter`;
-    $notif.innerText = `Vous êtes déconnecté`;
-    $notif.classList.remove("hidden");
-    $form.classList.add("hidden");
+    //si le texte contenu dans connect est "se déconnecter, alors il se passe tout ça : "
+    $connect.innerText = `Se connecter`; // le texte change
+    $notif.innerText = `Vous êtes déconnecté`; // la notif change de texte
+    $h1.innerHTML = `Hello`; // rajoute le nom dans le h1, et retire la valeur du log perso
+    $notif.classList.remove("hidden"); //la notif réapparaît
+    $form.classList.add("hidden"); // le forme se cache
     setTimeout(() => {
       $notif.classList.add("hidden");
     }, 2000);
@@ -37,10 +40,10 @@ $connect.addEventListener("click", (e) => {
 
 $envoyer.addEventListener("click", (e) => {
   e.preventDefault();
-  // le login et password vérification structure
+  // le login et password vérification structure valeurs strictements égales (les deux !)
   if (mylogin === $log.value && mypassword === $password.value) {
-    $form.classList.add("hidden");
-    $notif.classList.remove("hidden");
+    $form.classList.add("hidden"); // le form se cache
+    $notif.classList.remove("hidden"); // la notif apparaît
     $notif.classList.remove("is-danger"); // au cas où il y a eu ajout classe danger si erreurs avant
     $notif.innerHTML = `Vous êtes connecté.e`;
     $connect.innerHTML = "Se déconnecter";
@@ -66,6 +69,8 @@ $annuler.addEventListener("click", (e) => {
   //$notif.innerHTML = `Vous n'êtes pas connecté.e`;
   //$notif.classList.add("is-danger");
 });
+
+// mon ancien code qui ne faisait pas de vérification sur l'intérieur du texte de connect, et changeait manuellement les valeurs, mais du coup après déconnexion y avait pas moyen de reconnecter
 
 /*$envoyer.addEventListener("click", (e) => {
  e.preventDefault();
