@@ -1,12 +1,10 @@
-const $sections = document.querySelector(".section");
-const $link1 = document.querySelector(".section1");
-
 const $nav = document.querySelector("nav");
-
-$navnav.addEventListener("click", (e) => {
+$nav.addEventListener("click", (e) => {
   e.preventDefault();
-  // if e target = href if(e.target.href) {}
-  $sections.classList.toggle("active");
+  if (e.target.href) {
+    document.querySelector(".active").classList.remove("active");
+    document.querySelector("#" + e.target.dataset.id).classList.add("active");
+  }
 });
 
 /*
@@ -26,6 +24,14 @@ $nav.addEventListener("click", (e) => {
     //toggle ???
     $sections.classList.toggle("active");
   }
+
+
+
+$navnav.addEventListener("click", (e) => {
+  e.preventDefault();
+  // if e target = href if(e.target.href) {}
+  $sections.classList.toggle("active");
+});
 
 
   data- est récupéré par data-set 
