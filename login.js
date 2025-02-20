@@ -4,19 +4,18 @@ const mypassword = "+3+3+3";
 const $login = document.querySelector(".login");
 const $password = document.querySelector(".password");
 
-const $btn = document.querySelector(".is-link");
 const $secure = document.querySelector(".secure");
 const $notif = document.querySelector(".notification");
 const $form = document.querySelector(".form");
 
-$btn.addEventListener("click", (e) => {
+$form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (mylogin === $login && mypassword === $password) {
-    $notif.classList.remove("hidden");
-  } else {
+  if (mylogin === $login.value && mypassword === $password.value) {
     $form.classList.add("hidden");
     $secure.classList.remove("hidden");
+  } else {
+    $notif.classList.remove("hidden");
   }
 });
 
