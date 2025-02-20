@@ -14,3 +14,19 @@ $btn.addEventListener("click", (e) => {
 });
 
 //j'ai tout écrit moi-même !!!!
+
+//même event mais quand on passe avec la souris sur la box, pas quand on clique sur le bouton
+
+$box.addEventListener("mouseover", (e) => {
+  if ($box.classList.contains("active")) {
+    $box.classList.remove("active");
+    // si la box n'a pas de classe active : on la rajoute
+  } else {
+    $box.classList.add("active");
+  }
+});
+
+//raccourci :
+
+//$box.classList.toggle('active')
+// toggle rajoute une classe si elle n'est pas là, et l'enlève si elle est là
