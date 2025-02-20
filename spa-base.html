@@ -1,0 +1,81 @@
+<!doctype html>
+    <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>SPA</title>
+            <style>
+                header {
+                    height: 20vh;
+                    position: fixed;
+                    width: 100%;
+                    background-color: yellow;
+                    z-index: 7;
+                }
+               
+                .section {
+                   
+                    
+                    padding-top: 20vh;
+                    display: none;
+                    height: 80vh;
+                    width: 100%;
+                }
+                .section.active {
+                    
+                   display: block;
+                }
+                
+                #section1, #section3, #section5 {
+                    background-color: silver;
+                }
+                #section2, #section4 {
+                    background-color: grey;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <nav>
+                    <a href="#section1" data-id="section1">Section 1</a>
+                    <a href="#section2" data-id="section2">Section 2</a>
+                    <a href="#section3" data-id="section3">Section 3</a>
+                    <a href="#section4" data-id="section4">Section 4</a>
+                    <a href="#section5" data-id="section5">Section 5</a></nav>
+            </header>
+            <main>
+            <section class="section" id="section1">
+                <h1>Section 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates odio sint fuga exercitationem excepturi fugiat, nisi id doloremque corporis sunt dolores ratione repellat numquam, voluptatibus voluptate soluta. Nobis, alias?</p>
+            </section>
+            <section class="section active" id="section2">
+                <h1>Section 2</h1>
+                <p>Incidunt et natus debitis voluptas quod! Porro incidunt quod alias. Error libero consequuntur atque. Perferendis accusamus incidunt aliquam iste, repellendus itaque illo perspiciatis tenetur tempore quisquam laboriosam voluptate sequi adipisci!</p>
+            </section>
+            <section class="section" id="section3">
+                <h1>Section 3</h1>
+                <p>Odio odit delectus tempora quasi molestias, optio nisi cumque cum debitis, architecto voluptatem animi, iste omnis non maxime laborum aperiam ut quod tempore explicabo! Ducimus beatae debitis tenetur vero omnis.</p>
+            </section>
+            <section class="section" id="section4">
+                <h1>Section 4</h1>
+                <p>Iure quam iusto iste illum eum, exercitationem molestias blanditiis vitae commodi reprehenderit nam quas ullam veritatis id deleniti ipsa pariatur eius laboriosam nisi numquam in non inventore placeat fugit. Minima.</p>
+            </section>
+            <section class="section" id="section5">
+                <h1>Section 5</h1>
+                <p>Cum eius dolorem atque delectus ex, id sequi pariatur odit mollitia vero quaerat harum nihil magni laboriosam cupiditate numquam modi odio sed consequatur illo veritatis! Molestias quidem nemo qui eligendi.</p>
+            </section>
+            <script>
+                $links = document.querySelector('nav')
+                $links.addEventListener('click', e => {
+                    e.preventDefault();
+                    if (e.target.href) {
+                        
+                        document.querySelector('.active').classList.remove('active')
+                        document.querySelector("#"+e.target.dataset.id).classList.add('active')
+                    }
+                })
+            </script>
+        </main>
+        </body>
+    </html>
